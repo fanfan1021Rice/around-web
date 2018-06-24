@@ -9,6 +9,5 @@ export class Header extends React.Component {
                 <h1 className="App-title">Around</h1>
             </header>
         );
-
     }
 }
