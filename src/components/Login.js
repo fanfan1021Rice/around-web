@@ -1,8 +1,8 @@
 import React from 'react';
-import $ from 'jquery';
 import { Form, Icon, Input, Button, message } from 'antd';
-import { Link } from 'react-router-dom';
 import { API_ROOT } from '../constants';
+import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 const FormItem = Form.Item;
 
@@ -23,8 +23,8 @@ class NormalLoginForm extends React.Component {
                     this.props.handleLogin(response);
                 }, (error) => {
                     message.error(error.responseText);
-                }).catch((error) => {
-                    console.log(error);
+                }).catch((e) => {
+                    console.log(e);
                 });
             }
         });

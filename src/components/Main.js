@@ -1,8 +1,8 @@
 import React from 'react';
 import { Register } from './Register';
 import { Login } from './Login';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import { Home } from './Home';
+import { Switch, Route, Redirect } from 'react-router';
 
 export class Main extends React.Component {
     getLogin = () => {
@@ -14,17 +14,18 @@ export class Main extends React.Component {
     }
 
     getRoot = () => {
-        return <Redirect to="/login"/>
+        return <Redirect to="/login" />;
     }
+
     render() {
         return (
-            <div className="main">
+            <div>
                 <Switch>
                     <Route exact path="/" render={this.getRoot}/>
-                    <Route path="/register" component={Register}/>
-                    <Route path="/login" render={this.getLogin}/>
                     <Route path="/home" render={this.getHome}/>
-                    <Route render={this.getRoot}/>
+                    <Route path="/login" render={this.getLogin}/>
+                    <Route path="/register" component={Register}/>
+                    <Route render={this.getLogin}/>
                 </Switch>
             </div>
         );
